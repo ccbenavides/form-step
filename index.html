@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> step 2 </title>
+    <link rel="stylesheet" href="css/css.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/jquery.min.js" charset="utf-8"></script>
+    <script src="js/js.js" charset="utf-8"></script>
+    <script src="js/validate.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <div class="maestro_full">
+      <div class="maestro_max ">
+        <div  class="espacios">
+          <form id="SignupForm" action="">
+            <fieldset>
+              <legend> Datos personales </legend>
+              <div class="col-mitad">
+                <label for="nombres">Nombres</label>
+                <input id="nombres" name="nombres" type="text" />
+
+                <label for="apellido_materno">Apellido Materno</label>
+                <input id="apellido_materno" name="apellido_materno" type="text" />
+
+                <label for"ruc">Ruc</label>
+                <input id="ruc" name="ruc" type="text"/>
+
+                <label for"email">Email</label>
+                <input id="email" name="email" type="text"/>
+
+                <label for"asignatura">Asignatura</label>
+                <select class="" name="" id="asignatura">
+                    <option value="seleccione">Seleccione</option>
+                </select>
+
+                <label for"telefono">Telefono</label>
+                <input id="telefono" name="telefono" type="text"/>
+
+              </div><div class="col-mitad">
+                <label for"apellido_paterno">Apellido Paterno</label>
+                <input id="apellido_paterno" name="apellido_paterno" type="text" />
+
+                <label for"dni">Dni</label>
+                <input id="dni" name="dni" type="text"/>
+
+                <label for"direccion">Dirección</label>
+                <input id="direccion" name="direccion" type="text"/>
+
+                <div class="col-50">
+                  <label for"departamento">Departamento</label>
+                  <select class="" name="" id="departamento">
+                    <option value="option">Seleccione</option>
+                  </select>
+                  <!-- <input id="departamento" name="departamento" type="text"/> -->
+
+                </div><div class="col-50">
+                  <label for"provincia">Provincia</label>
+                  <select class="" name=""  id="provincia">
+                    <option value="option">Seleccione</option>
+
+                  </select>
+                  <!-- <input id="provincia" name="provincia" type="text"/> -->
+
+                </div>
+
+                <label for"distrito">Distrito</label>
+                <select class="" name="" id="distrito">
+                  <option value="option">Seleccione</option>
+
+                </select>
+                <!-- <input id="distrito" name="distrito" type="text"/> -->
+
+                <label for"distrito">Fecha De Nacimiento </label>
+                <div class="col-30">
+                  <select class="fecha_dia" name="" id="fecha_dia">
+                    <option value="option">Día</option>
+
+                  </select><select class="fecha_mes" name="" id="fecha_mes">
+                    <option value="option">Mes</option>
+
+                  </select><select class="fecha_anio" name="" id="fecha_anio">
+                    <option value="option">Año </option>
+                  </select>
+
+                </div>
+
+
+
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend> Formación académica </legend>
+                <span class="span_normal">ordenada de más reciente a más antigua </span>
+                <button type="button" name="button" class="btn-right" id="btnmodal_formacion"> Agregar </button>
+                <table class="table">
+                  <thead>
+                    <th class="width-60">Tipo</th>
+                    <th> Bachiller / Titulo </th>
+                    <th class="width-60">F. Inicio </th>
+                    <th class="width-60">F. Fin </th>
+                    <th>Universidad / Centro </th>
+                    <th class="width-90">Acción </th>
+                  </thead>
+                  <tbody id="body_formacion">
+                    <tr class="tr-faker">
+                      <td> - </td>
+                      <td> </td>
+                      <td>  </td>
+                      <td> </td>
+                      <td>  </td>
+                      <td> </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              <legend> Maestrias - Doctorados   </legend>
+                  <span class="span_normal">ordenada de más reciente a más antigua </span>
+                  <button type="button" name="button" class="btn-right" id="btnmodal_doctorados"> Agregar </button>
+                  <table class="table">
+                    <thead>
+                      <th class="width-60"> Tipo</th>
+                      <th> Grado y Mencion </th>
+                      <th class="width-60"> Duración </th>
+                      <th> Universidad </th>
+                      <th class="width-90">Acción </th>
+
+                    </thead>
+                    <tbody id="body_doctorado">
+                      <tr class="tr-faker">
+                        <td> - </td>
+                        <td> </td>
+                        <td>  </td>
+                        <td> </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+              <legend> Experiencia docente </legend>
+                  <span class="span_normal">ordenada de más reciente a más antigua </span>
+                  <button type="button" name="button" class="btn-right" id="btnmodal_experiencia"> Agregar </button>
+                  <table class="table">
+                    <thead>
+                      <th> Instituto </th>
+                      <th> Asignatura </th>
+                      <th class="width-60">F. Inicio </th>
+                      <th class="width-60">F. Fin </th>
+                      <th class="width-90">Acción </th>
+                    </thead>
+                    <tbody id="body_experiencia">
+                      <tr class="tr-faker">
+                        <td> - </td>
+                        <td>  </td>
+                        <td> </td>
+                        <td>  </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </fieldset>
+            <fieldset>
+              <legend> Conocimientos de idiomas </legend>
+                  <span class="span_normal">ordenada de más reciente a más antigua </span>
+                  <button type="button" name="button" class="btn-right" id="btnmodal_idioma"> Agregar </button>
+                  <table class="table">
+                    <thead>
+                      <th> Idioma </th>
+                      <th class="width-90" > Nivel </th>
+                      <th class="width-60">F. Inicio </th>
+                      <th class="width-60">F. Fin </th>
+                      <th class="width-90">Acción </th>
+                    </thead>
+                    <tbody id="body_idioma">
+                      <tr class="tr-faker">
+                        <td> - </td>
+                        <td>  </td>
+                        <td> </td>
+                        <td>  </td>
+                        <td> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+              <legend> Conocimientos informáticos </legend>
+                      <span class="span_normal">ordenada de más reciente a más antigua </span>
+                      <button type="button" name="button" class="btn-right" id="btnmodal_informatico"> Agregar </button>
+                      <table class="table">
+                        <thead>
+                          <th> Curso / Tematica </th>
+                          <th class="width-90"> Nivel </th>
+                          <th class="width-60">F. Inicio </th>
+                          <th class="width-60">F. Fin </th>
+                          <th class="width-90">Acción </th>
+                        </thead>
+                        <tbody id="body_informatico">
+                          <tr class="tr-faker">
+                            <td> - </td>
+                            <td>  </td>
+                            <td> </td>
+                            <td>  </td>
+                            <td> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+              <legend> Capacitaciones </legend>
+                          <span class="span_normal">ordenada de más reciente a más antigua </span>
+                          <button type="button" name="button" class="btn-right" id="btnmodal_capacitacion"> Agregar </button>
+                          <table class="table">
+                            <thead>
+                              <th> Curso / Seminario / Taller </th>
+                              <th> Institución </th>
+                              <th class="width-60">F. Inicio </th>
+                              <th class="width-60">F. Fin </th>
+                              <th class="width-90">Acción </th>
+                            </thead>
+                            <tbody id="body_capacitacion">
+                              <tr class="tr-faker">
+                                <td> - </td>
+                                <td>  </td>
+                                <td> </td>
+                                <td>  </td>
+                                <td> </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                <legend> Otros datos de interes  </legend>
+                              <button type="button" name="button" class="btn-right" id="btnmodal_otros"> Agregar </button>
+                              <table class="table">
+                                <thead>
+                                  <th> Otros </th>
+                                  <th class="width-90"> Acción </th>
+                                </thead>
+                                <tbody id="body_otros">
+                                  <tr class="tr-faker">
+                                    <td> - </td>
+                                    <td> - </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+            </fieldset>
+            <fieldset>
+              <legend> Ultimo Paso </legend>
+              <div class="col-mitad">
+                <label for="Name">Name</label>
+                <input type="text" name="name" value="">
+              </div><div class="col-mitad">
+                <label for="Name">Email</label>
+                <input type="text" name="name" value="">
+              </div>
+            </fieldset>
+            <p class="center">
+              <input id="SaveAccount" type="button" value="ENVIAR FORMULARIO" />
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+<!-- SOMBRA OSCURA PARA MODALES   -->
+<div class="maestro_oscuro">
+</div>
+
+
+<!-- MODAL FORMACION ACADEMICA   -->
+<div class="modal_formacion">
+      <legend> Formación académica </legend>
+      <label for=""> Tipo Grado de bachiller / Titulo profesional </label>
+      <select class="tipo_modal select-modal" name="" >
+        <option value="option">Seleccione</option>
+        <option value="bachiller">Bachiller</option>
+        <option value="titulo">Titulo</option>
+      </select>
+
+      <label for=""> Nombre de  Grado de bachiller / Titulo profesional </label>
+      <input type="text" class="text-modal grado_modal" name="name" value="">
+
+      <label for=""> Universidad / Centro  </label>
+      <input type="text" class="text-modal universidad_modal" name="universidad_modal" value="">
+      <div class="col-45">
+          <div class="col-40">
+          <label for=""> Fecha Inicio </label>
+          <select class="fecha_mes select-modal mes_modal_inicio" name="" id="fecha_mes">
+            <option value="option">Mes</option>
+          </select><select class="fecha_anio select-modal anio_modal_inicio" name="" id="fecha_anio">
+            <option value="option">Año </option>
+          </select>
+
+        </div><div class="col-40">
+            <label for=""> Fecha Fin  </label>
+          </select><select class="fecha_mes select-modal mes_modal_fin" name="" id="fecha_mes">
+            <option value="option">Mes</option>
+          </select><select class="fecha_anio select-modal anio_modal_fin" name="" id="fecha_anio">
+            <option value="option">Año </option>
+          </select>
+
+        </div>
+
+      </div>
+
+      <div class="top-50">
+        <a href="#" class="next validate_formacion" id="agregar_formacion" > Agregar ! </a>
+        <a href="#" class="next espacio-30 close-all"> Cancelar ! </a>
+
+      </div>
+    </div>
+
+
+<!-- MODAL MAESTRIA Y DOCTORADOS   -->
+<div class="modal_doctorados">
+  <legend> Maestrias - Doctorados  </legend>
+
+  <label for=""> Tipo Grado de Magister / Doctor </label>
+  <select class="tipodoc_modal select-modal" name="" >
+    <option value="option">Seleccione</option>
+    <option value="Magister">Magister</option>
+    <option value="Doctor">Doctor</option>
+  </select>
+
+  <label for=""> Grado y Mención </label>
+  <input type="text" class="text-modal gradodoc_modal" name="name" value="">
+
+  <label for=""> Duración </label>
+  <input type="text" class="text-modal duracion_modal" name="name" value="">
+
+  <label for=""> Universidad </label>
+  <input type="text" class="text-modal universidadoc_modal" name="name" value="">
+
+  <div class="top-50">
+    <a href="#" class="next validate_formacion" id="agregar_doctorado" > Agregar ! </a>
+    <a href="#" class="next espacio-30 close-all"> Cancelar ! </a>
+
+  </div>
+</div>
+
+
+<!-- MODAL EXPERIENCIA DOCENTE  -->
+<div class="modal_experiencia">
+    <legend> Experiencia Docente </legend>
+
+    <label for=""> Institución </label>
+    <input type="text" class="text-modal inst_modal" name="name" value="">
+
+    <label for=""> Asignatura </label>
+    <input type="text" class="text-modal asig_modal" name="name" value="">
+
+    <div class="col-45">
+        <div class="col-40">
+        <label for=""> Fecha Inicio </label>
+        <select class="fecha_mes select-modal mes_modal_inicio" name="" id="fecha_mes">
+          <option value="option">Mes</option>
+        </select><select class="fecha_anio select-modal anio_modal_inicio" name="" id="fecha_anio">
+          <option value="option">Año </option>
+        </select>
+
+      </div><div class="col-40">
+          <label for=""> Fecha Fin  </label>
+        </select><select class="fecha_mes select-modal mes_modal_fin" name="" id="fecha_mes">
+          <option value="option">Mes</option>
+        </select><select class="fecha_anio select-modal anio_modal_fin" name="" id="fecha_anio">
+          <option value="option">Año </option>
+        </select>
+
+      </div>
+
+    </div>
+
+    <div class="top-50">
+      <a href="#" class="next validate_formacion" id="agregar_experiencia" > Agregar ! </a>
+      <a href="#" class="next espacio-30 close-all"> Cancelar ! </a>
+
+    </div>
+
+</div>
+
+<!-- MODAL CONOCIMIENTOS DE IDIOMAS -->
+<div class="modal_idiomas">
+  <legend> Conocimientos de Idiomas </legend>
+
+  <label for=""> Idioma </label>
+  <input type="text" class="text-modal idioma_modal" name="name" value="">
+
+  <label for=""> Nivel </label>
+  <select class="nivel_modal select-modal" name="" >
+    <option value="basico">Basico</option>
+    <option value="intermedio">Intermedio</option>
+    <option value="avanzado">Avanzado</option>
+  </select>
+
+  <div class="col-45">
+      <div class="col-40">
+      <label for=""> Fecha Inicio </label>
+      <select class="fecha_mes select-modal mes_modal_inicio" name="" id="fecha_mes">
+        <option value="option">Mes</option>
+      </select><select class="fecha_anio select-modal anio_modal_inicio" name="" id="fecha_anio">
+        <option value="option">Año </option>
+      </select>
+
+    </div><div class="col-40">
+        <label for=""> Fecha Fin  </label>
+      </select><select class="fecha_mes select-modal mes_modal_fin" name="" id="fecha_mes">
+        <option value="option">Mes</option>
+      </select><select class="fecha_anio select-modal anio_modal_fin" name="" id="fecha_anio">
+        <option value="option">Año </option>
+      </select>
+
+    </div>
+
+  </div>
+
+  <div class="top-50">
+    <a href="#" class="next validate_formacion" id="agregar_idioma" > Agregar ! </a>
+    <a href="#" class="next espacio-30 close-all"> Cancelar ! </a>
+
+  </div>
+
+</div>
+
+
+<!-- MODAL CONOCIMIENTOS INFORMATICOS  -->
+<div class="modal_informaticos">
+  <legend> Conocimientos informáticos </legend>
+
+  <label for=""> Curso / Tematica </label>
+  <input type="text" class="text-modal tematica_modal" name="name" value="">
+
+  <label for=""> Nivel </label>
+  <select class="niveli_modal select-modal" name="" >
+    <option value="basico">Basico</option>
+    <option value="intermedio">Intermedio</option>
+    <option value="avanzado">Avanzado</option>
+  </select>
+
+  <div class="col-45">
+      <div class="col-40">
+      <label for=""> Fecha Inicio </label>
+      <select class="fecha_mes select-modal mes_modal_inicio" name="" id="fecha_mes">
+        <option value="option">Mes</option>
+      </select><select class="fecha_anio select-modal anio_modal_inicio" name="" id="fecha_anio">
+        <option value="option">Año </option>
+      </select>
+
+    </div><div class="col-40">
+        <label for=""> Fecha Fin  </label>
+      </select><select class="fecha_mes select-modal mes_modal_fin" name="" id="fecha_mes">
+        <option value="option">Mes</option>
+      </select><select class="fecha_anio select-modal anio_modal_fin" name="" id="fecha_anio">
+        <option value="option">Año </option>
+      </select>
+
+    </div>
+
+  </div>
+
+  <div class="top-50">
+    <a href="#" class="next validate_formacion" id="agregar_informatico" > Agregar ! </a>
+    <a href="#" class="next espacio-30 close-all"> Cancelar ! </a>
+
+  </div>
+
+</div>
+
+<!-- MODAL CAPACITACIONES -->
+<div class="modal_capacitaciones">
+  <legend> Capacitaciones </legend>
+  <label for=""> Nombre de Curso - Seminario - Taller </label>
+  <input type="text" class="text-modal namecurso_modal" name="name" value="">
+
+  <label for=""> Institución </label>
+  <input type="text" class="text-modal nameins_modal" name="name" value="">
+
+  <div class="col-45">
+      <div class="col-40">
+      <label for=""> Fecha Inicio </label>
+      <select class="fecha_mes select-modal mes_modal_inicio" name="" id="fecha_mes">
+        <option value="option">Mes</option>
+      </select><select class="fecha_anio select-modal anio_modal_inicio" name="" id="fecha_anio">
+        <option value="option">Año </option>
+      </select>
+
+    </div><div class="col-40">
+        <label for=""> Fecha Fin  </label>
+      </select><select class="fecha_mes select-modal mes_modal_fin" name="" id="fecha_mes">
+        <option value="option">Mes</option>
+      </select><select class="fecha_anio select-modal anio_modal_fin" name="" id="fecha_anio">
+        <option value="option">Año </option>
+      </select>
+
+    </div>
+
+  </div>
+
+  <div class="top-50">
+    <a href="#" class="next validate_formacion" id="agregar_capacitacion" > Agregar ! </a>
+    <a href="#" class="next espacio-30 close-all"> Cancelar ! </a>
+
+  </div>
+</div>
+
+<!-- MODAL OTROS DATOS DE INTERES  -->
+<div class="modal_otros">
+  <legend> Otros datos de interes profesional o académico </legend>
+
+  <label for=""> Otro  </label>
+  <input type="text" class="text-modal otro_modal" name="name" value="">
+
+  <div class="top-50">
+    <a href="#" class="next validate_formacion" id="agregar_otros" > Agregar ! </a>
+    <a href="#" class="next espacio-30 close-all"> Cancelar ! </a>
+
+  </div>
+
+</div>
+
+  </body>
+</html>

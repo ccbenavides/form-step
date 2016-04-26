@@ -1,0 +1,96 @@
+body { font-family:Lucida Sans, Arial, Helvetica, Sans-Serif; font-size:13px; margin:0; min-height: 100vh;background: #f1f2f3;}
+#main { width:960px; margin: 0px auto; border:solid 1px #b2b3b5; -moz-border-radius:10px; padding:20px; background-color:#f6f6f6;}
+#header { text-align:center; border-bottom:solid 1px #b2b3b5; margin: 0 0 20px 0; }
+fieldset { border:none;  box-sizing: border-box;}
+legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
+label { display:block; margin:15px 0 5px;}
+select { width: 100%; padding: 3.7px}
+input[type=text], input[type=password] { width:100%; padding:5px; border:solid 1px #000; box-sizing: border-box;}
+th{background: #f2f3f4}
+th,td{padding: 5px; color:#555;border: 1px solid #ddd;text-align: center;}
+table{ margin-top: 20px; margin-bottom: 50px}
+table {   border-collapse: collapse;width: 100%;}
+.span_normal{color: #777777;  font-style: italic;}
+.prev, .next { background-color:#b0232a;     padding: 9px 10px;border-radius:3px;  margin-top: 10px; color:#fff; text-decoration:none;}
+.prev:hover, .next:hover { background-color:#000; text-decoration:none;}
+.prev { float:left;}
+.next { float:right;}
+#steps { list-style:none; width:100%; overflow:hidden; margin:0px 0px  25px 0; padding:0px;}
+#steps li {font-size:24px; float:left; padding:10px; color:#b0b1b3;}
+#steps li span {font-size:11px; display:block;}
+#steps li.current { color:#000;}
+#makeWizard { background-color:#b0232a; color:#fff; padding:5px 10px; text-decoration:none; font-size:18px;}
+#makeWizard:hover { background-color:#000;}
+.maestro_full{ width: 100%;}
+.maestro_max{ width: 950px ; margin: 0 auto;background: #fff;}
+.espacios{     margin: 50px 0; padding: 30px;    box-sizing: border-box;    border: 1px solid #ddd;    border-radius: 3px;}
+.col-mitad{ display: inline-block; vertical-align: top; width: 47% }
+.col-mitad:nth-child(2n+1){ margin-left: 6% }
+
+.col-50{ display: inline-block; vertical-align: top; width: 47% }
+.col-50:nth-child(2n){ margin-left: 6% }
+
+.col-30 > select { display: inline-block; vertical-align: top; width: 30% ;}
+.col-30 > select:nth-child(n+2){ margin-left: 5% }
+
+.col-45 > div { display: inline-block; vertical-align: top; width: 45% ;}
+.col-45 > div:nth-child(n+2){ margin-left: 10% }
+
+.col-40 > select { display: inline-block;vertical-align: top;width: 47.5%}
+.col-40 > select:nth-child(2n+1) { margin-left: 5% }
+.espacio-30 { margin-right: 30px}
+
+.top-50 { margin-top: 50px}
+.btn-right{ float: right; margin-top:-10px}
+.width-60{ width: 60px}
+.width-90{ width: 90px}
+.center{text-align: center}
+#SaveAccount{ margin-top:30px}
+#SaveAccount {
+  padding: 10px;
+  margin-right: 5px;
+  height: 39px;
+  min-width: 100px;
+  background: #B0232A;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 3px;
+  box-shadow: 0 5px 0px #921E23;
+  border-bottom: 2px solid #501215;
+}
+#SaveAccount:hover {
+  background: #2e7a94;
+  box-shadow: 0 4px 1px #2e7a94;
+  border-bottom: 2px solid #2a7088;
+  transition: all 0.1s ease-in;
+}
+#SaveAccount:active {
+  transform: translateY(4px);
+  border-bottom-width: 2px;
+  box-shadow: none;
+}
+
+.maestro_oscuro{ background: rgba(0,0,0,0); top:0; left:0 ; width: 100%; height: 100%; position: fixed; z-index: -1}
+.maestro_oscuro.on{ background: rgba(0,0,0,.3);z-index:1}
+
+.modal_doctorados,
+.modal_experiencia,
+.modal_idiomas,
+.modal_informaticos,
+.modal_capacitaciones,
+.modal_otros,
+.modal_formacion{ width: 500px; margin:auto 300px; position:fixed;z-index: -1;right:5%; display: none;top:15%;background: #fff;padding: 30px;}
+
+.modal_doctorados.on,
+.modal_experiencia.on,
+.modal_idiomas.on,
+.modal_informaticos.on,
+.modal_capacitaciones.on,
+.modal_otros.on,
+.modal_formacion.on { z-index: 99999; display: block;}
+
+.table  input[type=text]{ border:0; color:777777;text-align: center; background: #fff}
