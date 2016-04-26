@@ -3,7 +3,7 @@ var mes = ['ene','feb','mar','abr','may','jun','jul','ago','sep','obc','nov','di
 
 $(document).ready(function() {
   //  ubigeo-peru
-   $.getJSON("ubigeo-peru/ubigeo-peru.json", function(result) {
+   $.getJSON("./ubigeo-peru.min.json", function(result) {
        var options = $("#departamento");
 
        $.each(result, function(item,data) {
