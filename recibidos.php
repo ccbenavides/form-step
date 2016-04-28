@@ -23,10 +23,10 @@
   */
       //print_r($_POST['name_idioma']);
       // echo $_POST['nombres'];
-    
+
 
     print_r($_REQUEST)
-
+echo "string";
          /* foreach ($name_idioma as $key => $value) {
             echo $value;
               }*/
