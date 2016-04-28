@@ -296,11 +296,13 @@ $(document).ready(function() {
             // Removed repetitive ID and made prova an array
             '<input type="text" class="text" name="prova[]" value="prova"></li>'
         );
-    });*/
-    $('.post-form').on('click', function (e) {
-        e.preventDefault();
-        console.log($('#SignupForm').serialize());
     });
+
+    $('.post-form').on('click', function (e) {
+      e.preventDefault();
+      console.log($('#SignupForm').serialize());
+    });*/
+
 });
 
 
@@ -345,6 +347,3 @@ function val_combo(valor){
     }else return 0;
 
 }
-
-
-

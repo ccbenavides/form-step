@@ -1,5 +1,5 @@
 <?php
-   /*include 'conexion.php';*/
+   include 'conexion.php';
     /*$nombre= $_POST['nombres'];
     $apellido_paterno= $_POST['apellido_paterno'];
     $apellido_materno= $_POST['apellido_materno'];
@@ -21,14 +21,17 @@
       $fecha_inicio_idioma[] = json_decode($_POST['fecha_inicio_idioma']);
       $fecha_fin_idioma[] = json_decode($_POST['fecha_fin_idioma']);
   */
-      //print_r($_POST['name_idioma']);
-      // echo $_POST['nombres'];
+  //  print_r($_POST['name_idioma']);
+    // echo $_POST['name_idioma'][0];
+      //echo $_POST['nombres'];
+    //  echo $_POST("name_idioma")[0];
 
-
-    print_r($_REQUEST)
-echo "string";
-         /* foreach ($name_idioma as $key => $value) {
-            echo $value;
-              }*/
+          foreach ($_POST['name_idioma'] as $key => $value) {
+                //echo $_POST['fecha_inicio_idioma'][$key];
+                $var_nuevo = $_POST['name_idioma'][$key];
+                pg_query($connect, "INSERT INTO conocimientosidiomas(
+                        id_docente, idioma, nivel, fecha_ini, fecha_fin)
+                  VALUES(1,'$var_nuevo', 'as', '1991-12-2', '1991-12-2')");
+          }
 
  ?>
