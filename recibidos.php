@@ -1,5 +1,5 @@
 <?php
-  include 'conexion.php';
+   /*include 'conexion.php';*/
     /*$nombre= $_POST['nombres'];
     $apellido_paterno= $_POST['apellido_paterno'];
     $apellido_materno= $_POST['apellido_materno'];
@@ -16,12 +16,19 @@
           VALUES ('$nombre', '$apellido_paterno', '$apellido_materno', '$email', 1, 'gdfgd',
           'sfsr', '$dni');");
       */
-      $name_idioma[] = json_decode($_POST['name_idioma']);
+    /*  $name_idioma[] = json_decode($_POST['name_idioma']);
       $nivel_idioma[] =json_decode($_POST['nivel_idioma']);
       $fecha_inicio_idioma[] = json_decode($_POST['fecha_inicio_idioma']);
       $fecha_fin_idioma[] = json_decode($_POST['fecha_fin_idioma']);
+  */
+      //print_r($_POST['name_idioma']);
+      // echo $_POST['nombres'];
+    
 
-          foreach ($name_idioma as $key => $value) {
+    print_r($_REQUEST)
+
+         /* foreach ($name_idioma as $key => $value) {
             echo $value;
-              }
+              }*/
+
  ?>

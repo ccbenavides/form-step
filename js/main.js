@@ -61,7 +61,7 @@ $(document).ready(function() {
 
 
   // agregar a tables desde modales
-  $("#agregar_formacion").click(function(event){
+  $(document).on('click','#agregar_formacion',function(event){
 
     event.preventDefault();
 
@@ -85,11 +85,11 @@ $(document).ready(function() {
       $("#body_formacion .tr-faker").remove();
 
       $("#body_formacion").append("<tr>"+
-      "<td> <input type='text' name='tipo_forma[]' value=\""+ tipo+"\" disabled /></td>"+
-      "<td> <input type='text' name='grado_forma[]' value=\""+ grado +"\" disabled /> </td>"+
-      "<td> <input type='text' name='fecha_inicio_forma[]' value=\""+ fecha_inicio+"\" disabled /> </td>"+
-      "<td> <input type='text' name='fecha_fin_forma[]' value=\""+ fecha_fin+"\" disabled /></td>"+
-      "<td> <input type='text' name='universidad_forma[]' value=\""+ universidad+"\" disabled /> </td>"+
+      "<td> <input type='text' name='tipo_forma[]' value=\""+ tipo+"\"  /></td>"+
+      "<td> <input type='text' name='grado_forma[]' value=\""+ grado +"\"  /> </td>"+
+      "<td> <input type='text' name='fecha_inicio_forma[]' value=\""+ fecha_inicio+"\" /> </td>"+
+      "<td> <input type='text' name='fecha_fin_forma[]' value=\""+ fecha_fin+"\" /></td>"+
+      "<td> <input type='text' name='universidad_forma[]' value=\""+ universidad+"\" /> </td>"+
       "<td> <a href='#' class='delete-row'>Eliminar</a> </td>"+
       "</tr>");
       cleaner_form();
@@ -114,10 +114,10 @@ $(document).ready(function() {
         $("#body_doctorado .tr-faker").remove();
 
         $("#body_doctorado").append("<tr>"+
-        "<td> <input type='text' name='tipo_doc[]' value=\""+ tipo+"\" disabled /></td>"+
-        "<td> <input type='text' name='grado_doc[]' value=\""+ grado +"\" disabled /> </td>"+
-        "<td> <input type='text' name='duracion_doc[]' value=\""+ duracion+"\" disabled /> </td>"+
-        "<td> <input type='text' name='universidad_doc[]' value=\""+ universidad+"\" disabled /></td>"+
+        "<td> <input type='text' name='tipo_doc[]' value=\""+ tipo+"\" /></td>"+
+        "<td> <input type='text' name='grado_doc[]' value=\""+ grado +"\" /> </td>"+
+        "<td> <input type='text' name='duracion_doc[]' value=\""+ duracion+"\" /> </td>"+
+        "<td> <input type='text' name='universidad_doc[]' value=\""+ universidad+"\" /></td>"+
         "<td> <a href='#' class='delete-row'>Eliminar</a> </td>"+
         "</tr>");
         cleaner_form();
@@ -147,10 +147,10 @@ $(document).ready(function() {
       $("#body_experiencia .tr-faker").remove();
 
       $("#body_experiencia").append("<tr>"+
-      "<td> <input type='text' name='inst_exp[]' value=\""+ institucion +"\" disabled /> </td>"+
-      "<td> <input type='text' name='asig_exp[]' value=\""+ asignatura+"\" disabled /> </td>"+
-      "<td> <input type='text' name='fecha_inicio_exp[]' value=\""+ fecha_inicio+"\" disabled /> </td>"+
-      "<td> <input type='text' name='fecha_fin_exp[]' value=\""+ fecha_fin+"\" disabled /></td>"+
+      "<td> <input type='text' name='inst_exp[]' value=\""+ institucion +"\" /> </td>"+
+      "<td> <input type='text' name='asig_exp[]' value=\""+ asignatura+"\" /> </td>"+
+      "<td> <input type='text' name='fecha_inicio_exp[]' value=\""+ fecha_inicio+"\" /> </td>"+
+      "<td> <input type='text' name='fecha_fin_exp[]' value=\""+ fecha_fin+"\" /></td>"+
       "<td> <a href='#' class='delete-row'>Eliminar</a> </td>"+
       "</tr>");
       cleaner_form();
@@ -178,10 +178,10 @@ $(document).ready(function() {
         $("#body_idioma .tr-faker").remove();
 
         $("#body_idioma").append("<tr>"+
-        "<td> <input type='text' name='name_idioma[]' value=\""+ idioma +"\" disabled /> </td>"+
-        "<td> <input type='text' name='nivel_idioma[]' value=\""+ nivel+"\" disabled /> </td>"+
-        "<td> <input type='text' name='fecha_inicio_idioma[]' value=\""+ fecha_inicio+"\" disabled /> </td>"+
-        "<td> <input type='text' name='fecha_fin_idioma[]' value=\""+ fecha_fin+"\" disabled /></td>"+
+        "<td> <input type='text' name='name_idioma[]' value=\""+ idioma +"\" /> </td>"+
+        "<td> <input type='text' name='nivel_idioma[]' value=\""+ nivel+"\" /> </td>"+
+        "<td> <input type='text' name='fecha_inicio_idioma[]' value=\""+ fecha_inicio+"\" /> </td>"+
+        "<td> <input type='text' name='fecha_fin_idioma[]' value=\""+ fecha_fin+"\" /></td>"+
         "<td> <a href='#' class='delete-row'>Eliminar</a> </td>"+
         "</tr>");
         cleaner_form();
@@ -209,10 +209,10 @@ $(document).ready(function() {
       $("#body_informatico .tr-faker").remove();
 
       $("#body_informatico").append("<tr>"+
-      "<td> <input type='text' name='name_info[]' value=\""+ tematica  +"\" disabled /> </td>"+
-      "<td> <input type='text' name='nivel_info[]' value=\""+ nivel+"\" disabled /> </td>"+
-      "<td> <input type='text' name='fecha_inicio_info[]' value=\""+ fecha_inicio+"\" disabled /> </td>"+
-      "<td> <input type='text' name='fecha_fin_info[]' value=\""+ fecha_fin+"\" disabled /></td>"+
+      "<td> <input type='text' name='name_info[]' value=\""+ tematica  +"\" /> </td>"+
+      "<td> <input type='text' name='nivel_info[]' value=\""+ nivel+"\" /> </td>"+
+      "<td> <input type='text' name='fecha_inicio_info[]' value=\""+ fecha_inicio+"\" /> </td>"+
+      "<td> <input type='text' name='fecha_fin_info[]' value=\""+ fecha_fin+"\" /></td>"+
       "<td> <a href='#' class='delete-row'>Eliminar</a> </td>"+
       "</tr>");
       cleaner_form();
@@ -239,10 +239,10 @@ $(document).ready(function() {
       $("#body_capacitacion .tr-faker").remove();
 
       $("#body_capacitacion").append("<tr>"+
-      "<td> <input type='text' name='name_capa[]' value=\""+ curso +"\" disabled /> </td>"+
-      "<td> <input type='text' name='inst_capa[]' value=\""+ instuticion+"\" disabled /> </td>"+
-      "<td> <input type='text' name='fecha_inicio_capa[]' value=\""+ fecha_inicio+"\" disabled /> </td>"+
-      "<td> <input type='text' name='fecha_fin_capa[]' value=\""+ fecha_fin+"\" disabled /></td>"+
+      "<td> <input type='text' name='name_capa[]' value=\""+ curso +"\" /> </td>"+
+      "<td> <input type='text' name='inst_capa[]' value=\""+ instuticion+"\" /> </td>"+
+      "<td> <input type='text' name='fecha_inicio_capa[]' value=\""+ fecha_inicio+"\" /> </td>"+
+      "<td> <input type='text' name='fecha_fin_capa[]' value=\""+ fecha_fin+"\" /></td>"+
       "<td> <a href='#' class='delete-row'>Eliminar</a> </td>"+
       "</tr>");
       cleaner_form();
@@ -262,7 +262,7 @@ $(document).ready(function() {
       $("#body_otros .tr-faker").remove();
 
       $("#body_otros").append("<tr>"+
-      "<td> <input type='text' name='name_otro[]' value=\""+ otro +"\" disabled /> </td>"+
+      "<td> <input type='text' name='name_otro[]' value=\""+ otro +"\" /> </td>"+
       "<td> <a href='#' class='delete-row'>Eliminar</a> </td>"+
       "</tr>");
       cleaner_form();
@@ -290,7 +290,17 @@ $(document).ready(function() {
       $(this).closest("tr").remove();
    });
 
-
+   /* $(".button_form").live('click',function() {
+        $("#list").append(
+            '<li style="height:20px;">' +
+            // Removed repetitive ID and made prova an array
+            '<input type="text" class="text" name="prova[]" value="prova"></li>'
+        );
+    });*/
+    $('.post-form').on('click', function (e) {
+        e.preventDefault();
+        console.log($('#SignupForm').serialize());
+    });
 });
 
 
@@ -335,3 +345,6 @@ function val_combo(valor){
     }else return 0;
 
 }
+
+
+
