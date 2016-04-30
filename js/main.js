@@ -164,8 +164,8 @@ $(document).ready(function() {
 
       var idioma  = $(".idioma_modal").val();
       var nivel   = $(".nivel_modal").val();
-      var fecha_inicio = $(".modal_idiomas .mes_modal_inicio").val() +"-"+ $(".modal_idiomas .anio_modal_inicio").val();
-      var fecha_fin    = $(".modal_idiomas .mes_modal_fin").val() +"-"+ $(".modal_idiomas .anio_modal_fin").val();
+      var fecha_inicio = $(".modal_idiomas .anio_modal_inicio").val() +"-"+ $(".modal_idiomas .mes_modal_inicio").val() ;
+      var fecha_fin    = $(".modal_idiomas .anio_modal_fin").val() +"-"+ $(".modal_idiomas .mes_modal_fin").val();
 
       bandera += val_text($(".idioma_modal"));
       bandera += val_combo($(".nivel_modal"));

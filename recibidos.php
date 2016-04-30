@@ -21,17 +21,18 @@
       $fecha_inicio_idioma[] = json_decode($_POST['fecha_inicio_idioma']);
       $fecha_fin_idioma[] = json_decode($_POST['fecha_fin_idioma']);
   */
-  //  print_r($_POST['name_idioma']);
+    //  print_r($_POST['name_idioma']);
     // echo $_POST['name_idioma'][0];
-      //echo $_POST['nombres'];
+    //echo $_POST['nombres'];
     //  echo $_POST("name_idioma")[0];
 
-          foreach ($_POST['name_idioma'] as $key => $value) {
-                //echo $_POST['fecha_inicio_idioma'][$key];
-                $var_nuevo = $_POST['name_idioma'][$key];
+         foreach ($_POST['name_idioma'] as $key => $value) {
+                echo $_POST['name_idioma'][$key];
+             /*   $var_nuevo = $_POST['name_idioma'][$key];
                 pg_query($connect, "INSERT INTO conocimientosidiomas(
                         id_docente, idioma, nivel, fecha_ini, fecha_fin)
-                  VALUES(1,'$var_nuevo', 'as', '1991-12-2', '1991-12-2')");
+                  VALUES(1,'$var_nuevo', 'as', '1991-12-2', '1991-12-2')");*/
           }
+
 
  ?>
