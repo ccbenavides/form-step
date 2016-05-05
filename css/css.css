@@ -7,7 +7,7 @@ label { display:block; margin:15px 0 5px;}
 select { width: 100%; padding: 3.7px}
 input[type=text], input[type=password] { width:100%; padding:5px; border:solid 1px #000; box-sizing: border-box;}
 th{background: #f2f3f4}
-th,td{padding: 5px; color:#555;border: 1px solid #ddd;text-align: center;}
+th,td{padding: 5px; color:#555;border: 1px solid #A9A1A1;text-align: center;}
 table{ margin-top: 20px; margin-bottom: 50px}
 table {   border-collapse: collapse;width: 100%;}
 .span_normal{color: #777777;  font-style: italic;}
@@ -45,8 +45,8 @@ table {   border-collapse: collapse;width: 100%;}
 .width-60{ width: 60px}
 .width-90{ width: 90px}
 .center{text-align: center}
-#SaveAccount{ margin-top:30px}
-#SaveAccount {
+#SaveAccount,#enviar_disponibilidad{ margin-top:30px}
+#SaveAccount ,#enviar_disponibilidad{
   padding: 10px;
   margin-right: 5px;
   height: 39px;
@@ -60,9 +60,9 @@ table {   border-collapse: collapse;width: 100%;}
   font-size: 14px;
   border-radius: 3px;
   box-shadow: 0 5px 0px #921E23;
-  border-bottom: 2px solid #501215;
+  border-bottom: 2px solid #8E282D;
 }
-#SaveAccount:hover {
+#SaveAccount:hover,#enviar_disponibilidad:hover {
   background: #2e7a94;
   box-shadow: 0 4px 1px #2e7a94;
   border-bottom: 2px solid #2a7088;
@@ -94,3 +94,7 @@ table {   border-collapse: collapse;width: 100%;}
 .modal_formacion.on { z-index: 99999; display: block;}
 
 .table  input[type=text]{ border:0; color:777777;text-align: center; background: #fff}
+.letra_normal{ font-style: italic;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #444;}
