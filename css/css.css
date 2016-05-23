@@ -14,7 +14,7 @@ table {   border-collapse: collapse;width: 100%;}
 .prev, .next { background-color:#b0232a;     padding: 9px 10px;border-radius:3px;  margin-top: 10px; color:#fff; text-decoration:none;}
 .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
 .prev { float:left;}
-.next { float:right;}
+.next { float:right; cursor: pointer;}
 #steps { list-style:none; width:100%; overflow:hidden; margin:0px 0px  25px 0; padding:0px;}
 #steps li {font-size:24px; float:left; padding:10px; color:#b0b1b3;}
 #steps li span {font-size:11px; display:block;}
@@ -98,3 +98,28 @@ table {   border-collapse: collapse;width: 100%;}
     font-size: 15px;
     margin-bottom: 10px;
     color: #444;}
+    
+ .line{ width: 100%; height: 1px ; background:#CECECE;}
+ .error-message{    
+    color: red;
+    font-size: 17px;
+    display: inline-block;
+    margin-top: 16px;
+    }
+    
+ .menu_list li{
+    padding: 10px 0;
+    list-style-type: decimal-leading-zero;
+    font-size: 15px;
+}
+.breadcump{
+  margin: 0;
+  padding: 0;
+}
+.breadcump li{
+      list-style-type: none;
+    display: inline-table;
+    padding: 7px;
+    color: #444;
+    font-size: 14px;
+}

@@ -1,11 +1,29 @@
 <?php
 include 'conexion.php';
+
+session_start();
+//PUT THIS HEADER ON TOP OF EACH UNIQUE PAGE
+if(!isset($_SESSION['username'])){
+  header("location:main_login.php");
+}
+
+// registro del docente primero 
+$ruc= $_POST['ruc'];
+$direccion= $_POST['direccion'];
+$fecha_nacimiento= $_POST['fecha_anio_nac'].'-'.$_POST['fecha_mes_nac'].'-'.$_POST['fecha_dia_nac'];
+$distrito=$_POST['distrito'];
+$provincia=$_POST['provincia'];
+$departamento=$_POST['departamento'];
+$telefono=$_POST['telefono'];
+
+
+
+
+
 /*$nombre= $_POST['nombres'];
 $apellido_paterno= $_POST['apellido_paterno'];
 $apellido_materno= $_POST['apellido_materno'];
 $dni= $_POST['dni'];
-$ruc= $_POST['ruc'];
-$direccion= $_POST['direccion'];
 $email= $_POST['email'];
 
 echo $nombre . $apellido_paterno . $apellido_materno . $dni . $ruc . $direccion . $email ;

@@ -1,3 +1,26 @@
+  <?php 
+      include 'conexion.php'; 
+    session_start();
+  //PUT THIS HEADER ON TOP OF EACH UNIQUE PAGE
+    if(!isset($_SESSION['username'])){
+      header("location:main_login.php");
+    }
+      
+      $es_persona_sql = "select * from persona where id_persona=".$_SESSION["clave"];
+      $es_persona_row =  pg_query($connect ,$es_persona_sql );
+      if($row =  pg_fetch_array($es_persona_row)){
+        $nombre_per = $row['nombre_per'];
+        $apepat_per = $row['apepat_per'];
+        $apemat_per = $row['apemat_per'];
+        $email = $row['email'];
+        $id_asignatura = $row['id_asignatura'];
+        $dni = $row['dni'];
+                   
+      } 
+            
+            
+   ?>
+
 <html>
 <!DOCTYPE html>
   <head>
@@ -6,7 +29,6 @@
     <link rel="stylesheet" href="css/css.css" media="screen" title="no title" charset="utf-8">
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/js.js" charset="utf-8"></script>
-    <script src="js/validate.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
   </head>
 
@@ -14,6 +36,10 @@
     <div class="maestro_full">
       <div class="maestro_max ">
         <div  class="espacios">
+          <ul class="breadcump">
+                <li> <a href="index.php">incio</a> </li>
+                / <li>formulario </li>
+            </ul>
           <form id="SignupForm" METHOD="POST" action="recibidos.php">
 
 
@@ -21,31 +47,45 @@
               <legend> Datos personales  </legend>
               <div class="col-mitad">
                 <label for="nombres">Nombres</label>
-                <input id="nombres" name="nombres" type="text" />
+                <input id="nombres" name="nombres" type="text" value="<?php echo $nombre_per ?>" disabled />
 
                 <label for="apellido_materno">Apellido Materno</label>
-                <input id="apellido_materno" name="apellido_materno" type="text" />
+                <input id="apellido_materno" name="apellido_materno" type="text" value="<?php echo $apemat_per ?>" disabled />
 
                 <label for="ruc">Ruc</label>
                 <input id="ruc" name="ruc" type="text"/>
 
                 <label for="email">Email</label>
-                <input id="email" name="email" type="text"/>
-
+                <input id="email" name="email" type="text" value="<?php echo $email ?>"  disabled/>
+      
                 <label for="asignatura">Asignatura</label>
-                <select class="" name="" id="asignatura">
-                    <option value="seleccione">Seleccione</option>
+                <select class="" name="" id="asignatura" value="<?php echo $id_asignatura ?>" disabled >
+                    <?php include 'conexion.php'; 
+                        $string_sql = "select descripcion_asig, id_asignatura from asignatura";
+                        $data_semestre =  pg_query($connect ,$string_sql );
+                        while ($row= pg_fetch_assoc($data_semestre)) 
+                        { 
+                          //<?php if("val1" == $_POST['mybox']){ echo "selected"; } 
+                           $selected ='';
+                          if($row['id_asignatura']==$id_asignatura){
+                            $selected = "selected";
+                          }
+                          echo "<option value=".$row['id_asignatura']." ". $selected .">".$row['descripcion_asig']."</option>"; 
+                        } 
+                        pg_close();
+            ?>
+                  
                 </select>
 
                 <label for="telefono">Telefono</label>
                 <input id="telefono" name="telefono" type="text"/>
 
               </div><div class="col-mitad">
-                <label for="apellido_paterno">Apellido Paterno</label>
-                <input id="apellido_paterno" name="apellido_paterno" type="text" />
+                <label for="apellido_paterno" >Apellido Paterno</label>
+                <input id="apellido_paterno" name="apellido_paterno" type="text" value="<?php echo $apepat_per ?>" disabled />
 
                 <label for="dni">Dni</label>
-                <input id="dni" name="dni" type="text"/>
+                <input id="dni" name="dni" type="text" value="<?php echo $dni ?>" disabled />
 
                 <label for="direccion">Dirección</label>
                 <input id="direccion" name="direccion" type="text"/>
@@ -248,11 +288,9 @@
             <fieldset>
               <legend> Ultimo Paso :  </legend>
               <div class="col-mitad">
-                <label for="Name">Name</label>
-                <input type="text" name="name" value="">
+  
               </div><div class="col-mitad">
-                <label for="Name">Email</label>
-                <input type="text" name="name" value="">
+  
               </div>
             </fieldset>
             <p class="center">
