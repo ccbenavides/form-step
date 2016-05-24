@@ -311,14 +311,14 @@
 <div class="modal_formacion">
       <legend> Formación académica </legend>
       <label for=""> Tipo Grado de bachiller / Titulo profesional </label>
-      <select class="tipo_modal select-modal" name="" >
+      <select class="tipo_modal select-modal" name="tipo_grado" >
         <option value="option">Seleccione</option>
         <option value="bachiller">Bachiller</option>
         <option value="titulo">Titulo</option>
       </select>
 
       <label for=""> Nombre de  Grado de bachiller / Titulo profesional </label>
-      <input type="text" class="text-modal grado_modal" name="name" value="">
+      <input type="text" class="text-modal grado_modal" name="gradotitulo" value="">
 
       <label for=""> Universidad / Centro  </label>
       <input type="text" class="text-modal universidad_modal" name="universidad_modal" value="">

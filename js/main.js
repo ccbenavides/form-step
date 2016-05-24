@@ -70,8 +70,8 @@ $(document).ready(function() {
     var tipo = $(".tipo_modal").val();
     var grado = $(".grado_modal").val();
     var universidad = $(".universidad_modal").val();
-    var fecha_inicio = $(".mes_modal_inicio").val() +"-"+ $(".anio_modal_inicio").val();
-    var fecha_fin    = $(".mes_modal_fin").val() +"-"+ $(".anio_modal_fin").val();
+    var fecha_inicio = $(".anio_modal_inicio").val() +"-"+ $(".mes_modal_inicio").val();
+    var fecha_fin    = $(".anio_modal_fin").val() +"-"+ $(".mes_modal_fin").val();
 
     bandera += val_combo($(".tipo_modal"));
     bandera += val_text($(".grado_modal"));
@@ -133,8 +133,8 @@ $(document).ready(function() {
 
     var institucion  = $(".inst_modal").val();
     var asignatura   = $(".asig_modal").val();
-    var fecha_inicio = $(".modal_experiencia .mes_modal_inicio").val() +"-"+ $(".modal_experiencia .anio_modal_inicio").val();
-    var fecha_fin    = $(".modal_experiencia .mes_modal_fin").val() +"-"+ $(".modal_experiencia .anio_modal_fin").val();
+    var fecha_inicio = $(".modal_experiencia .anio_modal_inicio").val() +"-"+ $(".modal_experiencia .mes_modal_inicio").val();
+    var fecha_fin    = $(".modal_experiencia .anio_modal_fin").val() +"-"+ $(".modal_experiencia .mes_modal_fin").val();
 
     bandera += val_text($(".inst_modal"));
     bandera += val_text($(".asig_modal"));
@@ -195,8 +195,8 @@ $(document).ready(function() {
 
     var tematica  = $(".tematica_modal").val();
     var nivel   = $(".niveli_modal").val();
-    var fecha_inicio = $(".modal_informaticos .mes_modal_inicio").val() +"-"+ $(".modal_informaticos .anio_modal_inicio").val();
-    var fecha_fin    = $(".modal_informaticos .mes_modal_fin").val() +"-"+ $(".modal_informaticos .anio_modal_fin").val();
+    var fecha_inicio = $(".modal_informaticos .anio_modal_inicio").val() +"-"+ $(".modal_informaticos .mes_modal_inicio").val();
+    var fecha_fin    = $(".modal_informaticos .anio_modal_fin").val() +"-"+ $(".modal_informaticos .mes_modal_fin").val();
 
     bandera += val_text($(".tematica_modal"));
     bandera += val_combo($(".niveli_modal"));
@@ -225,8 +225,8 @@ $(document).ready(function() {
 
     var curso  = $(".namecurso_modal").val();
     var instuticion   = $(".nameins_modal").val();
-    var fecha_inicio = $(".modal_capacitaciones .mes_modal_inicio").val() +"-"+ $(".modal_capacitaciones .anio_modal_inicio").val();
-    var fecha_fin    = $(".modal_capacitaciones .mes_modal_fin").val() +"-"+ $(".modal_capacitaciones .anio_modal_fin").val();
+    var fecha_inicio = $(".modal_capacitaciones .anio_modal_inicio").val() +"-"+ $(".modal_capacitaciones .mes_modal_inicio").val();
+    var fecha_fin    = $(".modal_capacitaciones .anio_modal_fin").val() +"-"+ $(".modal_capacitaciones .mes_modal_fin").val();
 
     bandera += val_text($(".namecurso_modal"));
     bandera += val_text($(".nameins_modal"));
