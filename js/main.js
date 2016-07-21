@@ -70,8 +70,18 @@ $(document).ready(function() {
     var tipo = $(".tipo_modal").val();
     var grado = $(".grado_modal").val();
     var universidad = $(".universidad_modal").val();
+    if( $(".anio_modal_inicio").val() != "option" && 
+        $(".mes_modal_inicio").val()  != "option"){
     var fecha_inicio = $(".anio_modal_inicio").val() +"-"+ $(".mes_modal_inicio").val();
-    var fecha_fin    = $(".anio_modal_fin").val() +"-"+ $(".mes_modal_fin").val();
+    }else{
+      var fecha_inicio = ""
+    }
+    if ($(".anio_modal_fin").val()  != "option"&& 
+        $(".mes_modal_fin").val()  != "option"){
+    var fecha_fin    = $(".anio_modal_fin").val() +"-"+ $(".mes_modal_fin").val(); 
+        }else{
+      var fecha_fin = ""          
+        }
 
     bandera += val_combo($(".tipo_modal"));
     bandera += val_text($(".grado_modal"));
