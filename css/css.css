@@ -45,7 +45,7 @@ table {   border-collapse: collapse;width: 100%;}
 .width-60{ width: 60px}
 .width-90{ width: 90px}
 .center{text-align: center}
-#SaveAccount,#enviar_disponibilidad{ margin-top:30px}
+#enviar_disponibilidad{ margin-top:30px}
 #SaveAccount ,#enviar_disponibilidad{
   padding: 10px;
   margin-right: 5px;
@@ -55,7 +55,9 @@ table {   border-collapse: collapse;width: 100%;}
   border: none;
   outline: none;
   color: white;
+  cursor: pointer;
   font-family: inherit;
+  margin-bottom: 30px;
   font-weight: 600;
   font-size: 14px;
   border-radius: 3px;
@@ -122,4 +124,31 @@ table {   border-collapse: collapse;width: 100%;}
     padding: 7px;
     color: #444;
     font-size: 14px;
+}
+
+input, select{
+  text-transform: uppercase;
+}
+
+.color_de_error{
+  border: 1px solid red;
+}
+
+
+.color_de_error{
+  border: 1px solid red !important;
+}
+
+.color_de_normal{
+  border: 1px solid #000;
+}
+
+ul>li {
+
+}
+col-mitad ul{
+     list-style: initial;
+    list-style-type: none;
+    /* font-size: 14px; */
+    padding: 14px 3px;
 }

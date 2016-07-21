@@ -26,6 +26,9 @@ if( trim($_POST["dni"]) &&
             if( $row['clave'] === md5($_POST["password"]) ){
                 $_SESSION["username"] = $row['usuario'];
                 $_SESSION["clave"] = $row['id_persona'];
+                $_SESSION["nombre_per"] = $row['nombre_per'];
+                $_SESSION["apepat_per"] = $row['apepat_per'];
+                $_SESSION["dni"] = $row['dni'];
                 header("location:index.php?dato=" . $row["id_persona"]);   
                 
             }else{
@@ -51,6 +54,9 @@ if(trim($_POST["password"]) == trim($_POST["password_r"]) && $_POST["password_r"
     if($row =  pg_fetch_array($result_update)){
          $_SESSION["username"] = $row['usuario'];
          $_SESSION["clave"] = $row['id_persona'];
+         $_SESSION["nombre_per"] = $row['nombre_per'];
+         $_SESSION["apepat_per"] = $row['apepat_per'];
+         $_SESSION["dni"] = $row['dni'];
          header("location:index.php?dni=" . $_POST["id_persona"]);                     
     } 
 }

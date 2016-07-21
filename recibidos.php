@@ -13,24 +13,26 @@ if(!isset($_SESSION['username'])){
 // comentar esto             
  
 // registro del docente primero 
-$fecha_nacimiento = $_POST['fecha_anio_nac'].'-'.$_POST['fecha_mes_nac'].'-'.$_POST['fecha_dia_nac'];
-$ruc = $_POST['ruc'];
-$direccion = $_POST['direccion'];
-$distrito = $_POST['distrito'];
-$departamento = $_POST['departamento'];
-$telefono = $_POST['telefono'];
-$provincia = $_POST['provincia'];
+  $fecha_nacimiento = $_POST['fecha_anio_nac'].'-'.$_POST['fecha_mes_nac'].'-'.$_POST['fecha_dia_nac'];
+  $ruc = $_POST['ruc'];
+  $direccion = $_POST['direccion'];
+  $distrito = $_POST['distrito'];
+  $departamento = $_POST['departamento'];
+  $telefono = $_POST['telefono'];
+  $provincia = $_POST['provincia'];
+  $tipo_docente = ( strlen($_POST['tipo_docente']) == 0 ) ? 'invitado':'unprg';
+ 
 
-$query_docente = "INSERT INTO docente(fecha_nacimiento, ruc, direccion, distrito, departamento, telefono, 
-            id_persona, id_semestre, estado, tipo, provincia)
-            VALUES ('". $fecha_nacimiento ."', '". $ruc ."', '". $direccion ."','". $distrito ."', 
-                  '". $departamento ."', '". $telefono ."', 
-            ". $_SESSION['clave'].", ". $id_semestre .", 1 , '-' , '" . $provincia . "') RETURNING id_docente";
+  $query_docente = "INSERT INTO docente(fecha_nacimiento, ruc, direccion, distrito, departamento, telefono, 
+              id_persona, id_semestre, estado, tipo, provincia)
+              VALUES ('". $fecha_nacimiento ."', '". $ruc ."', '". $direccion ."','". $distrito ."', 
+                    '". $departamento ."', '". $telefono ."', 
+              ". $_SESSION['clave'].", ". $id_semestre .", 1 , '". $tipo_docente ."' , '" . $provincia . "') RETURNING id_docente";
 
-$id_docente_x = pg_query($connect, $query_docente);
-if($row =  pg_fetch_array($id_docente_x)){
-         $id_Docente= $row['id_docente'];
-}
+  $id_docente_x = pg_query($connect, $query_docente);
+  if($row =  pg_fetch_array($id_docente_x)){
+          $id_Docente= $row['id_docente'];
+  }
 
 // registro de formacion academica
 
@@ -221,7 +223,10 @@ if($row =  pg_fetch_array($id_docente_x)){
 
 
 
-// registro de  otros datos de interes 
+// registro de  otros datos de interes
+
+
+ 
   $data_otro = "";
   foreach ($_POST['name_otro'] as $key => $value) {
       $name_otro = $_POST['name_otro'][$key];
@@ -240,4 +245,9 @@ if($row =  pg_fetch_array($id_docente_x)){
     
   }
 
+
+  
+header("location:index.php?dato=" . $_SESSION['clave']);   
+
 ?>
+

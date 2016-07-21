@@ -5,8 +5,12 @@
     if(!isset($_SESSION['username'])){
       header("location:main_login.php");
     }
-      
-      $es_persona_sql = "select * from persona where id_persona=".$_SESSION["clave"];
+      $es_persona_sql = "select nombre_per,p.id_persona,apepat_per,apemat_per,email,id_asignatura,p.dni ,o.dni as tipo_docente 
+from persona as p 
+left join 
+profesoresunprg as o 
+on p.dni=o.dni where 
+p.id_persona=".$_SESSION["clave"];
       $es_persona_row =  pg_query($connect ,$es_persona_sql );
       if($row =  pg_fetch_array($es_persona_row)){
         $nombre_per = $row['nombre_per'];
@@ -15,6 +19,7 @@
         $email = $row['email'];
         $id_asignatura = $row['id_asignatura'];
         $dni = $row['dni'];
+        $tipo_docente = $row['tipo_docente'];
                    
       } 
             
@@ -29,6 +34,7 @@
     <link rel="stylesheet" href="css/css.css" media="screen" title="no title" charset="utf-8">
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/js.js" charset="utf-8"></script>
+    <script src="js/val.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
   </head>
 
@@ -42,7 +48,7 @@
             </ul>
           <form id="SignupForm" METHOD="POST" action="recibidos.php">
 
-
+              <input type="hidden" value="<?php echo $tipo_docente ?>" name="tipo_docente">
             <fieldset>
               <legend> Datos personales  </legend>
               <div class="col-mitad">
@@ -137,7 +143,7 @@
               <legend> Formación académica </legend>
                 <span class="span_normal">ordenada de más reciente a más antigua </span>
                 <button type="button" name="button" class="btn-right" id="btnmodal_formacion"> Agregar </button>
-                <table class="table">
+                <table class="table tabla_formacion_academica">
                   <thead>
                     <th class="width-60">Tipo</th>
                     <th> Bachiller / Titulo </th>
@@ -161,7 +167,7 @@
               <legend> Maestrias - Doctorados   </legend>
                   <span class="span_normal">ordenada de más reciente a más antigua </span>
                   <button type="button" name="button" class="btn-right" id="btnmodal_doctorados"> Agregar </button>
-                  <table class="table">
+                  <table class="table tabla_maestria_doctorados">
                     <thead>
                       <th class="width-60"> Tipo</th>
                       <th> Grado y Mencion </th>
@@ -184,7 +190,7 @@
               <legend> Experiencia docente </legend>
                   <span class="span_normal">ordenada de más reciente a más antigua </span>
                   <button type="button" name="button" class="btn-right" id="btnmodal_experiencia"> Agregar </button>
-                  <table class="table">
+                  <table class="table tabla_exp_docente" >
                     <thead>
                       <th> Instituto </th>
                       <th> Asignatura </th>
@@ -208,7 +214,7 @@
               <legend> Conocimientos de idiomas </legend>
                   <span class="span_normal">ordenada de más reciente a más antigua </span>
                   <button type="button" name="button" class="btn-right" id="btnmodal_idioma"> Agregar </button>
-                  <table class="table">
+                  <table class="table tabla_conocimientos_idiomas">
                     <thead>
                       <th> Idioma </th>
                       <th class="width-90" > Nivel </th>
@@ -230,7 +236,7 @@
               <legend> Conocimientos informáticos </legend>
                       <span class="span_normal">ordenada de más reciente a más antigua </span>
                       <button type="button" name="button" class="btn-right" id="btnmodal_informatico"> Agregar </button>
-                      <table class="table">
+                      <table class="table tabla_conocimientos_info">
                         <thead>
                           <th> Curso / Tematica </th>
                           <th class="width-90"> Nivel </th>
@@ -251,7 +257,7 @@
               <legend> Capacitaciones </legend>
                           <span class="span_normal">ordenada de más reciente a más antigua </span>
                           <button type="button" name="button" class="btn-right" id="btnmodal_capacitacion"> Agregar </button>
-                          <table class="table">
+                          <table class="table tabla_capacitaciones">
                             <thead>
                               <th> Curso / Seminario / Taller </th>
                               <th> Institución </th>
@@ -271,7 +277,7 @@
                           </table>
                 <legend> Otros datos de interes  </legend>
                               <button type="button" name="button" class="btn-right" id="btnmodal_otros"> Agregar </button>
-                              <table class="table">
+                              <table class="table tabla_otros_datos">
                                 <thead>
                                   <th> Otros </th>
                                   <th class="width-90"> Acción </th>
@@ -286,16 +292,63 @@
 
             </fieldset>
             <fieldset>
-              <legend> Ultimo Paso :  </legend>
-              <div class="col-mitad">
-  
-              </div><div class="col-mitad">
-  
+              <p class="">
+                <span class="span_normal"> Revise si esta todo conforme y click para enviar los datos y guardar.</span>
+                <br/><br/>
+              <input id="SaveAccount" type="submit" class="post-form" value="REGISTRAR DOCENTE" />
+            </p>
+              <legend> Verificar Datos   </legend>
+              <hr/>
+              <div class="bloque_verificar">
+                <h2>Datos Personales</h2>
+                <div class="col-mitad">
+                  <ul id="bloque_uno_datos">                 
+            
+                  </ul>
+                </div><div class="col-mitad">
+                   <ul id="bloque_dos_datos">
+                     
+                   </ul>
+                </div>
+                
+              </div>
+              <hr />
+              <div>
+                <h2>Formación académica</h2>
+                <div id="add_table_fa"></div>
+              </div>
+              <hr />
+              <div>
+                <h2>Maestrias - Doctorados</h2>
+                <div id="add_table_md"></div>
+              </div>
+              <hr />
+              <div>
+                <h2>Experiencia docente</h2>
+                <div id="add_table_ex"></div>
+              </div>
+              <hr />
+              <div>
+                <h2>Conocimientos de idiomas</h2>
+                <div id="add_table_coi"></div>
+              </div>
+              <hr />
+              <div>
+                <h2>Conocimientos informáticos</h2>
+                <div id="add_table_ci"></div>
+              </div>
+              <hr />
+              <div>
+                <h2>Capacitaciones</h2>
+                <div id="add_table_cap"></div>
+              </div>
+               <hr />
+              <div>
+                <h2>Otros datos de interes</h2>
+                <div id="add_table_odi"></div>
               </div>
             </fieldset>
-            <p class="center">
-              <input id="SaveAccount" type="submit" class="post-form" value="ENVIAR FORMULARIO" />
-            </p>
+            
           </form>
 
         </div>
