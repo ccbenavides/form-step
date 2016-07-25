@@ -12,6 +12,8 @@
     <meta charset="utf-8">
     <title> step 2 </title>
     <link rel="stylesheet" href="css/css.css" media="screen" title="no title" charset="utf-8">
+     <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Oswald" rel="stylesheet">
+    
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/js.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
@@ -32,6 +34,7 @@
   </head>
   
   <body>
+       <?php include("./bloques/header.php") ?>
     <div class="maestro_full">
       <div class="maestro_max ">
         <div  class="espacios">
@@ -42,7 +45,6 @@
             </h1>
             <div class="line"></div>
             <form action="checklogin.php" method="POST" class="login">
-                <legend>Cambio de clave </legend>
                 <label for="" >Clave :</label>
                 <input class="pas_1" type="password" name="password">
                 
@@ -63,7 +65,7 @@
           </div>
       </div>
     </div>
-    
+         <?php include("./bloques/footer.php") ?>
     <script>
            $(".next").click(function(event){
               if( $(".pas_1").val() != $(".pas_2").val() ){

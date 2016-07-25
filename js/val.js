@@ -15,7 +15,7 @@ $(document).ready(function() {
         var telefono = $("#telefono").val().toUpperCase();
         var asignatura = $("#asignatura option:selected" ).text().toUpperCase();
 
-   validar_data("direccion");
+        /*validar_data("direccion");
         validar_data("ruc");
         validar_data("telefono");
     
@@ -25,7 +25,7 @@ $(document).ready(function() {
         
         validar_fecha_sel("fecha_dia");
         validar_fecha_sel("fecha_mes");
-        validar_fecha_sel("fecha_anio");
+        validar_fecha_sel("fecha_anio");*/
         
                 
         
@@ -50,17 +50,19 @@ $(document).ready(function() {
        $('.tabla_exp_docente').clone().appendTo('#add_table_ex');
     });
     
-    $("#step2Prev").click(function(){
-        $("#add_table_fa .tabla_formacion_academica").remove();
-        $("#add_table_md .tabla_maestria_doctorados").remove();
-        $("#add_table_ex .tabla_exp_docente").remove();
-    });
-    
     $("#step2Next").click(function(e){
        $('.tabla_conocimientos_idiomas').clone().appendTo('#add_table_coi');
        $('.tabla_conocimientos_info').clone().appendTo('#add_table_ci');
        $('.tabla_capacitaciones').clone().appendTo('#add_table_cap');
        $('.tabla_otros_datos').clone().appendTo('#add_table_odi');
+    });
+    
+    
+    
+    $("#step2Prev").click(function(){
+        $("#add_table_fa .tabla_formacion_academica").remove();
+        $("#add_table_md .tabla_maestria_doctorados").remove();
+        $("#add_table_ex .tabla_exp_docente").remove();
     });
     
      $("#step3Prev").click(function(){

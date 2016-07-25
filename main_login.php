@@ -12,6 +12,8 @@
     <meta charset="utf-8">
     <title> step 2 </title>
     <link rel="stylesheet" href="css/css.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Oswald" rel="stylesheet">
+    
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/js.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
@@ -32,6 +34,7 @@
   </head>
   
   <body>
+     <?php include("./bloques/header.php") ?>
     <div class="maestro_full">
       <div class="maestro_max ">
         <div  class="espacios">
@@ -39,7 +42,6 @@
             <h1> Bienvenido Docente </h1>
             <div class="line"></div>
             <form action="checklogin.php" method="POST" class="login">
-                <legend>Login </legend>
                 <label for="" >Dni :</label>
                 <input type="text" name="dni" value="<?php echo $_GET["dni"] ?>">
                 
@@ -72,5 +74,6 @@
           </div>
       </div>
     </div>
+    <?php include("./bloques/footer.php") ?>
    </body>
   </html> 

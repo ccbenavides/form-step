@@ -32,6 +32,7 @@ p.id_persona=".$_SESSION["clave"];
     <meta charset="utf-8">
     <title> step 2 </title>
     <link rel="stylesheet" href="css/css.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Oswald" rel="stylesheet">
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/js.js" charset="utf-8"></script>
     <script src="js/val.js" charset="utf-8"></script>
@@ -39,9 +40,10 @@ p.id_persona=".$_SESSION["clave"];
   </head>
 
   <body>
+      <?php include("./bloques/header.php") ?>
     <div class="maestro_full">
       <div class="maestro_max ">
-        <div  class="espacios">
+        <div  class="espacios espacio_forzado">
           <ul class="breadcump">
                 <li> <a href="index.php">incio</a> </li>
                 / <li>formulario </li>
@@ -609,6 +611,6 @@ p.id_persona=".$_SESSION["clave"];
   </div>
 
 </div>
-
+      <?php include("./bloques/footer.php") ?>
   </body>
 </html>

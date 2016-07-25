@@ -12,6 +12,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/css.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Oswald" rel="stylesheet">
+    
     <script src="js/jquery.min.js" charset="utf-8"></script>
 
    <style>
