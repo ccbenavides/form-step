@@ -4,6 +4,12 @@
   if(isset($_SESSION['username'])){
     header("location:index.php");
   }
+  
+  if(isset($_GET["dni"])){
+        $dni = $_GET["dni"];
+  }else   $dni = "";
+  
+  
 ?>
 
 <html>
@@ -43,7 +49,7 @@
             <div class="line"></div>
             <form action="checklogin.php" method="POST" class="login">
                 <label for="" >Dni :</label>
-                <input type="text" name="dni" value="<?php echo $_GET["dni"] ?>">
+                <input type="text" name="dni" value="<?php echo $dni ?>">
                 
                 <label for="">Clave : </label>
                 <input type="password" name="password" >
@@ -53,7 +59,7 @@
                     <input type="submit"  class="next" value="ingresar" >
                     
                 </div>
-                <?php if($_GET["check"]) { ?>
+                <?php if(isset($_GET["check"])) { ?>
                 <div>
                     <?php if($_GET["check"] == '3') { ?>
                         <span class="error-message"> contraseña inválida ! </span> 
