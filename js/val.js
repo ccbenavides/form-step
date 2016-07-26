@@ -1,5 +1,5 @@
 
-
+var data = "";
 
 $(document).ready(function() {
     
@@ -45,16 +45,21 @@ $(document).ready(function() {
     });
     
     $("#step1Next").click(function(e){
-       $('.tabla_formacion_academica').clone().appendTo('#add_table_fa');
-       $('.tabla_maestria_doctorados').clone().appendTo('#add_table_md');
-       $('.tabla_exp_docente').clone().appendTo('#add_table_ex');
+
+       copia_pega("tabla_formacion_academica","add_table_fa");
+        copia_pega("tabla_maestria_doctorados","add_table_md");
+         copia_pega("tabla_exp_docente","add_table_ex");
+
+       
     });
     
     $("#step2Next").click(function(e){
-       $('.tabla_conocimientos_idiomas').clone().appendTo('#add_table_coi');
-       $('.tabla_conocimientos_info').clone().appendTo('#add_table_ci');
-       $('.tabla_capacitaciones').clone().appendTo('#add_table_cap');
-       $('.tabla_otros_datos').clone().appendTo('#add_table_odi');
+        copia_pega("tabla_conocimientos_idiomas","add_table_coi");
+        copia_pega("tabla_conocimientos_info","add_table_ci");
+        copia_pega("tabla_capacitaciones","add_table_cap");
+        copia_pega("tabla_otros_datos","add_table_odi");
+        
+
     });
     
     
@@ -100,6 +105,21 @@ function validar_fecha_sel(id){
             $("#" + id).addClass("color_de_error"); 
         }else {
             $("#" + id).removeClass("color_de_error"); 
+            
+        }
+}
+
+function copia_pega(id1, id2){
+        data = $('.' + id1 ).clone();
+        if(data.find("td").html() == " - "){
+            $('#' + id2 ).parent().prev().hide();
+            $('#' + id2 ).parent().hide();
+        }else{
+            $('#' + id2 ).parent().prev().show();
+            $('#' + id2 ).parent().show();
+            data.find('tr th:last-child, tr td:last-child').remove();
+            data.find('input[type=text]').removeAttr('name');
+            data.appendTo('#' + id2 );
             
         }
 }

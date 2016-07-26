@@ -48,17 +48,19 @@ if( trim($_POST["dni"]) &&
 
 
 // esto si esta el passchange
-
-if(trim($_POST["password"]) == trim($_POST["password_r"]) && $_POST["password_r"] ) {
-    $result_update = pg_query('UPDATE persona SET clave=\''. md5($_POST["password_r"]). '\' WHERE dni=\''. $_POST["dni"] .'\'  RETURNING *')  or die(pg_last_error());;
-    if($row =  pg_fetch_array($result_update)){
-         $_SESSION["username"] = $row['usuario'];
-         $_SESSION["clave"] = $row['id_persona'];
-         $_SESSION["nombre_per"] = $row['nombre_per'];
-         $_SESSION["apepat_per"] = $row['apepat_per'];
-         $_SESSION["dni"] = $row['dni'];
-         header("location:index.php?dni=" . $_POST["id_persona"]);                     
-    } 
+if(isset($_POST["password_r"])){
+    if(trim($_POST["password"]) == trim($_POST["password_r"]) && $_POST["password_r"] ) {
+        $result_update = pg_query('UPDATE persona SET clave=\''. md5($_POST["password_r"]). '\' WHERE dni=\''. $_POST["dni"] .'\'  RETURNING *')  or die(pg_last_error());;
+        if($row =  pg_fetch_array($result_update)){
+            $_SESSION["username"] = $row['usuario'];
+            $_SESSION["clave"] = $row['id_persona'];
+            $_SESSION["nombre_per"] = $row['nombre_per'];
+            $_SESSION["apepat_per"] = $row['apepat_per'];
+            $_SESSION["dni"] = $row['dni'];
+            header("location:index.php?dni=" . $row['dni']);                     
+        } 
+    }
+    
 }
 
 

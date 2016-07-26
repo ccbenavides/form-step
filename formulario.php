@@ -33,6 +33,10 @@ p.id_persona=".$_SESSION["clave"];
     <title> step 2 </title>
     <link rel="stylesheet" href="css/css.css" media="screen" title="no title" charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/evil-icons/1.8.0/evil-icons.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/evil-icons/1.8.0/evil-icons.min.js"></script>
+    
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/js.js" charset="utf-8"></script>
     <script src="js/val.js" charset="utf-8"></script>
@@ -55,16 +59,16 @@ p.id_persona=".$_SESSION["clave"];
               <legend> Datos personales  </legend>
               <div class="col-mitad">
                 <label for="nombres">Nombres</label>
-                <input id="nombres" name="nombres" type="text" value="<?php echo $nombre_per ?>" disabled />
+                <input id="nombres" name="nombres" type="text" value="<?php echo $nombre_per ?>" />
 
                 <label for="apellido_materno">Apellido Materno</label>
-                <input id="apellido_materno" name="apellido_materno" type="text" value="<?php echo $apemat_per ?>" disabled />
+                <input id="apellido_materno" name="apellido_materno" type="text" value="<?php echo $apemat_per ?>" />
 
                 <label for="ruc">Ruc</label>
                 <input id="ruc" name="ruc" type="text"/>
 
                 <label for="email">Email</label>
-                <input id="email" name="email" type="text" value="<?php echo $email ?>"  disabled/>
+                <input id="email" name="email" type="email" value="<?php echo $email ?>"  >
       
                 <label for="asignatura">Asignatura</label>
                 <select class="" name="" id="asignatura" value="<?php echo $id_asignatura ?>" disabled >
@@ -90,7 +94,7 @@ p.id_persona=".$_SESSION["clave"];
 
               </div><div class="col-mitad">
                 <label for="apellido_paterno" >Apellido Paterno</label>
-                <input id="apellido_paterno" name="apellido_paterno" type="text" value="<?php echo $apepat_per ?>" disabled />
+                <input id="apellido_paterno" name="apellido_paterno" type="text" value="<?php echo $apepat_per ?>" />
 
                 <label for="dni">Dni</label>
                 <input id="dni" name="dni" type="text" value="<?php echo $dni ?>" disabled />
@@ -144,7 +148,8 @@ p.id_persona=".$_SESSION["clave"];
             <fieldset>
               <legend> Formación académica </legend>
                 <span class="span_normal">ordenada de más reciente a más antigua </span>
-                <button type="button" name="button" class="btn-right" id="btnmodal_formacion"> Agregar </button>
+                <button type="button" name="button" class="btn-right" id="btnmodal_formacion"> 
+                   + Agregar </button>
                 <table class="table tabla_formacion_academica">
                   <thead>
                     <th class="width-60">Tipo</th>
@@ -168,7 +173,7 @@ p.id_persona=".$_SESSION["clave"];
 
               <legend> Maestrias - Doctorados   </legend>
                   <span class="span_normal">ordenada de más reciente a más antigua </span>
-                  <button type="button" name="button" class="btn-right" id="btnmodal_doctorados"> Agregar </button>
+                  <button type="button" name="button" class="btn-right" id="btnmodal_doctorados">+ Agregar </button>
                   <table class="table tabla_maestria_doctorados">
                     <thead>
                       <th class="width-60"> Tipo</th>
@@ -191,7 +196,7 @@ p.id_persona=".$_SESSION["clave"];
 
               <legend> Experiencia docente </legend>
                   <span class="span_normal">ordenada de más reciente a más antigua </span>
-                  <button type="button" name="button" class="btn-right" id="btnmodal_experiencia"> Agregar </button>
+                  <button type="button" name="button" class="btn-right" id="btnmodal_experiencia">+ Agregar </button>
                   <table class="table tabla_exp_docente" >
                     <thead>
                       <th> Instituto </th>
@@ -215,7 +220,7 @@ p.id_persona=".$_SESSION["clave"];
             <fieldset>
               <legend> Conocimientos de idiomas </legend>
                   <span class="span_normal">ordenada de más reciente a más antigua </span>
-                  <button type="button" name="button" class="btn-right" id="btnmodal_idioma"> Agregar </button>
+                  <button type="button" name="button" class="btn-right" id="btnmodal_idioma">+ Agregar </button>
                   <table class="table tabla_conocimientos_idiomas">
                     <thead>
                       <th> Idioma </th>
@@ -237,7 +242,7 @@ p.id_persona=".$_SESSION["clave"];
 
               <legend> Conocimientos informáticos </legend>
                       <span class="span_normal">ordenada de más reciente a más antigua </span>
-                      <button type="button" name="button" class="btn-right" id="btnmodal_informatico"> Agregar </button>
+                      <button type="button" name="button" class="btn-right" id="btnmodal_informatico">+ Agregar </button>
                       <table class="table tabla_conocimientos_info">
                         <thead>
                           <th> Curso / Tematica </th>
@@ -258,7 +263,7 @@ p.id_persona=".$_SESSION["clave"];
                       </table>
               <legend> Capacitaciones </legend>
                           <span class="span_normal">ordenada de más reciente a más antigua </span>
-                          <button type="button" name="button" class="btn-right" id="btnmodal_capacitacion"> Agregar </button>
+                          <button type="button" name="button" class="btn-right" id="btnmodal_capacitacion">+ Agregar </button>
                           <table class="table tabla_capacitaciones">
                             <thead>
                               <th> Curso / Seminario / Taller </th>
@@ -278,7 +283,9 @@ p.id_persona=".$_SESSION["clave"];
                             </tbody>
                           </table>
                 <legend> Otros datos de interes  </legend>
-                              <button type="button" name="button" class="btn-right" id="btnmodal_otros"> Agregar </button>
+                               <span class="span_normal">ordenada de más reciente a más antigua </span>
+                              <button type="button" name="button" class="btn-right" id="btnmodal_otros"> 
+                                + Agregar </button>
                               <table class="table tabla_otros_datos">
                                 <thead>
                                   <th> Otros </th>

@@ -1,27 +1,33 @@
-var mes = ['ene','feb','mar','abr','may','jun','jul','ago','sep','obc','nov','dic'];
+var mes = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
 
 
 $(document).ready(function() {
   //  ubigeo-peru
    $.getJSON("./ubigeo-peru.min.json", function(result) {
        var options = $("#departamento");
+       var codigo_uno = "";
+       var codigo_dos = "";
 
        $.each(result, function(item,data) {
           if( data["provincia"] == 0 && data["distrito"] == 0){
-            options.append($("<option />").val(data["departamento"]).text(data["nombre"]));
+            options.append($("<option />").attr('codigo_ubigeo',data["departamento"])
+                                          .val(data["nombre"])
+                                          .text(data["nombre"]));
           };
        });
 
        $("#departamento").click(function(){
             var options_provincia = $("#provincia");
-            var num_departamento = $( "#departamento option:selected" ).val();
+            var num_departamento = $( "#departamento option:selected" ).attr('codigo_ubigeo');
 
             options_provincia.html($("<option />").val("seleccione").text("seleccione"));
             $("#distrito").html($("<option />").val("seleccione").text("seleccione"));
 
             $.each(result, function(item,data) {
                if( data["departamento"] == num_departamento && data["provincia"] != 00 && data["distrito"] == 0){
-                 options_provincia.append($("<option />").val(data["provincia"]).text(data["nombre"]));
+                 options_provincia.append($("<option />").attr('codigo_ubigeo',data["provincia"])
+                                                        .val(data["nombre"])
+                                                        .text(data["nombre"]));
                };
             });
 
@@ -29,13 +35,15 @@ $(document).ready(function() {
 
        $("#provincia").click(function(){
          var options_distrito = $("#distrito");
-         var num_distrito = $("#provincia option:selected").val();
-         var num_departamento = $( "#departamento option:selected" ).val();
+         var num_distrito = $("#provincia option:selected").attr('codigo_ubigeo');
+         var num_departamento = $( "#departamento option:selected" ).attr('codigo_ubigeo');
          options_distrito.html($("<option />").val("seleccione").text("seleccione"));
 
          $.each(result,function(item,data){
            if( data["departamento"] == num_departamento && data["provincia"] == num_distrito && data["distrito"] != 00){
-             options_distrito.append($("<option />").val(data["distrito"]).text(data["nombre"]));
+             options_distrito.append($("<option />").attr('codigo_ubigeo',data["distrito"])
+                                                  .val(data["nombre"])
+                                                  .text(data["nombre"]));
            };
          });
 
@@ -47,7 +55,7 @@ $(document).ready(function() {
   // fechas
     for (var i = 1; i <= 31; i++) {   $(".fecha_dia").append($("<option />").val(i).text(i)); }
     for (var i = 1; i <= 12; i++) {   $(".fecha_mes").append($("<option />").val(i).text( mes[i-1]));}
-    for (var i = 1915; i <= 2000; i++) {   $(".fecha_anio").append($("<option />").val(i).text(i));}
+    for (var i = 1950; i <= 2000; i++) {   $(".fecha_anio").append($("<option />").val(i).text(i));}
 
   //  abrir modales
     abrir_modal("btnmodal_formacion","modal_formacion");

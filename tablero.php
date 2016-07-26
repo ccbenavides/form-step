@@ -44,6 +44,7 @@
   </head>
 
   <body>
+         <?php include("./bloques/header.php") ?>
     <div class="maestro_full">
       <div class="maestro_max ">
         <div  class="espacios">
@@ -210,5 +211,6 @@
             var numero_semestre = <?php echo $id_semestre ?>;
         </script>
     <script src="js/tabla.js" charset="utf-8"></script>
+       <?php include("./bloques/footer.php") ?>
 </body>
 </html>

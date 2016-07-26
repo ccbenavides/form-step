@@ -6,7 +6,7 @@ fieldset { border:none;  box-sizing: border-box;}
 legend { font-size:18px; margin:0px; padding:10px 0px; color:#3B5998; font-weight:bold;}
 label { display:block; margin:15px 0 5px;}
 select { width: 100%; padding: 3.7px}
-input[type=text], input[type=password] {     border: 1px solid #a9a9a9;
+input[type=text], input[type=password], input[type=email]  {     border: 1px solid #a9a9a9;
      border-radius: 2px;width:100%; padding:5px;  box-sizing: border-box;}
 th{background: #f2f3f4}
 th,td{padding: 5px; color:#555;border: 1px solid #A9A1A1;text-align: center;}
@@ -46,7 +46,22 @@ table {   border-collapse: collapse;width: 100%;}
 .espacio-30 { margin-right: 30px}
 
 .top-50 { margin-top: 50px}
-.btn-right{ float: right; margin-top:-10px}
+.btn-right{ float: right; 
+            margin-top:-10px;
+    
+    float: right;
+    margin-top: -20px;
+    color: #fff;
+    background: #2ecc71;
+    border: 1px solid #2dbf32;
+    border-radius: 2px;
+    padding: 9px;
+    /* vertical-align: top; */
+    font-weight: bold;
+    top: -10px;
+    cursor: pointer;
+    
+    }
 .width-60{ width: 60px}
 .width-90{ width: 90px}
 .center{text-align: center}
@@ -111,7 +126,7 @@ table {   border-collapse: collapse;width: 100%;}
 .modal_otros.on,
 .modal_formacion.on { z-index: 99999; display: block;}
 
-.table  input[type=text]{ border:0; color:777777;text-align: center; background: #fff}
+.table  input[type=text]{ border:0; color:#444;text-align: center; background: #fff}
 .letra_normal{ font-style: italic;
     font-size: 15px;
     margin-bottom: 10px;
@@ -242,4 +257,58 @@ input,select {
 .footer p{
   margin: 6px;
   font-size: 12px;
+}
+
+.menu_list div, .menu_list a, .menu_list p{
+  display: inline-block;
+  vertical-align: middle;
+}
+.menu_list li{
+  list-style: none;
+}
+.menu_list a{
+  text-decoration: none;
+}
+.menu_list{
+  padding: 0;
+}
+
+.check_false{
+  color: #2980b9;
+}
+.check_true{
+  color : #2ecc71;
+}
+
+.check_mid{
+  color: #777777;
+}
+
+.lados_footer{
+  display: inline-block;
+  vertical-align: middle;
+}
+.lados_footer_1{
+  width: 80%;
+}
+.lados_footer_2{
+  width: 20%;
+  text-align: right;
+}
+.lados_footer_2 a,.lados_footer_2 div{
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+      font-size: 15px;
+      color:#f66;
+      
+}
+
+.vert_mid{
+  vertical-align: middle;
+  display: inline-block;
+}
+
+input[type="email"]{
+  text-transform: initial !important;
 }
