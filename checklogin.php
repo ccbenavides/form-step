@@ -16,7 +16,7 @@ function quitar($mensaje)
 if( trim($_POST["dni"]) && 
     strlen(trim($_POST["password"]))>0     
   ){
-    $result = pg_query('SELECT clave, dni,id_persona, usuario FROM persona WHERE dni=\''. trim($_POST["dni"]) .'\'');
+    $result = pg_query('SELECT clave, dni,id_persona,nombre_per,apepat_per,usuario FROM persona WHERE dni=\''. trim($_POST["dni"]) .'\'');
     if($row =  pg_fetch_array($result)){
         
         if($row['dni'] == $row['clave']){
